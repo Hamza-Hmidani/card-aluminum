@@ -151,7 +151,7 @@
             <!-- Stats -->
             <div class="grid grid-cols-3 gap-3 mb-8">
                 <div class="btn-premium rounded-xl p-4 text-center">
-                    <div class="text-2xl font-bold gold-gradient" id="windowsCount">8</div>
+                    <div class="text-2xl font-bold gold-gradient" id="windowsCount">16</div>
                     <div class="text-xs text-gray-400">نوافذ</div>
                 </div>
                 <div class="btn-premium rounded-xl p-4 text-center">
@@ -175,22 +175,37 @@
                     <button onclick="filterProjects(this,'windows')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-gray-800 text-gray-300 whitespace-nowrap flex items-center gap-2">
                         <i class="fas fa-window-maximize"></i>
                         النوافذ
-                        <span class="category-count px-2 py-0.5 rounded-full text-xs">8</span>
+                        <span class="category-count px-2 py-0.5 rounded-full text-xs">12</span>
                     </button>
                     <button onclick="filterProjects(this,'doors')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-gray-800 text-gray-300 whitespace-nowrap flex items-center gap-2">
                         <i class="fas fa-door-open"></i>
                         الأبواب
-                        <span class="category-count px-2 py-0.5 rounded-full text-xs">6</span>
+                        <span class="category-count px-2 py-0.5 rounded-full text-xs">10</span>
                     </button>
                     <button onclick="filterProjects(this,'kitchens')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-gray-800 text-gray-300 whitespace-nowrap flex items-center gap-2">
                         <i class="fas fa-kitchen-set"></i>
                         المطابخ
-                        <span class="category-count px-2 py-0.5 rounded-full text-xs">4</span>
+                        <span class="category-count px-2 py-0.5 rounded-full text-xs">51</span>
                     </button>
                     <button onclick="filterProjects(this,'curtains')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-gray-800 text-gray-300 whitespace-nowrap flex items-center gap-2">
                         <i class="fas fa-theater-masks"></i>
                         الستائر
                         <span class="category-count px-2 py-0.5 rounded-full text-xs" id="curtainsBadge">0</span>
+                    </button>
+                    <button onclick="filterProjects(this,'vazcat')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-gray-800 text-gray-300 whitespace-nowrap flex items-center gap-2">
+                        <i class="fas fa-palette"></i>
+                        ڤزكات
+                        <span class="category-count px-2 py-0.5 rounded-full text-xs" id="vazcatBadge">0</span>
+                    </button>
+                    <button onclick="filterProjects(this,'zaj')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-gray-800 text-gray-300 whitespace-nowrap flex items-center gap-2">
+                        <i class="fas fa-th-large"></i>
+                        زاج
+                        <span class="category-count px-2 py-0.5 rounded-full text-xs" id="zajBadge">0</span>
+                    </button>
+                    <button onclick="filterProjects(this,'blacar')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-gray-800 text-gray-300 whitespace-nowrap flex items-center gap-2">
+                        <i class="fas fa-car-side"></i>
+                        بلاكرات
+                        <span class="category-count px-2 py-0.5 rounded-full text-xs" id="blacarBadge">0</span>
                     </button>
                 </div>
             </div>
@@ -249,6 +264,12 @@
     <script>
         // Projects data (used to generate the grid)
         const projectsData = [
+            // windows
+            { src: 'image/windows/w1.jpeg', title: 'نافذة منزلقة', alt: 'w1', category: 'windows' },
+            { src: 'image/windows/w2.jpeg', title: 'نافذة بانورامية', alt: 'w2', category: 'windows' },
+            { src: 'image/windows/w3.jpeg', title: 'نافذة عصرية', alt: 'w3', category: 'windows' },
+            { src: 'image/windows/w4.jpeg', title: 'نافذة غرفة نوم', alt: 'w4', category: 'windows' },
+            { src: 'image/windows/w5.jpeg', title: 'نافذة صالة', alt: 'w5', category: 'windows' },
             { src: 'image/f1.jpg', title: 'نافذة منزلقة', alt: 'نافذة منزلقة', category: 'windows' },
             { src: 'image/f2.jpg', title: 'نوافذ فيلا فاخرة', alt: 'نوافذ فيلا', category: 'windows' },
             { src: 'image/f3.jpg', title: 'نافذة بانورامية', alt: 'نافذة بانورامية', category: 'windows' },
@@ -256,22 +277,114 @@
             { src: 'image/f6.jpg', title: 'نوافذ غرفة نوم', alt: 'نوافذ غرفة نوم', category: 'windows' },
             { src: 'image/f7.jpg', title: 'نوافذ صالة', alt: 'نوافذ صالة', category: 'windows' },
             { src: 'image/f8.jpg', title: 'نوافذ مكتب', alt: 'نوافذ مكتب', category: 'windows' },
+            
+            // zaj
+            { src: 'image/zaj/z1.jpeg', title: 'z1', alt: 'z1', category: 'zaj' },
+            { src: 'image/zaj/z2.jpg', title: 'z2', alt: 'z2', category: 'zaj' },
+            { src: 'image/zaj/z3.jpg', title: 'z3', alt: 'z3', category: 'zaj' },
+            { src: 'image/zaj/z4.jpg', title: 'z4', alt: 'z4', category: 'zaj' },
 
-            { src: 'image/Po1.jpg', title: 'باب زجاجي منزلق', alt: 'باب زجاجي', category: 'doors' },
-            // { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&h=600&fit=crop', title: 'باب رئيسي', alt: 'باب رئيسي', category: 'doors' },
-            // { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=600&fit=crop&sat=-100', title: 'باب بلكونة', alt: 'باب بلكونة', category: 'doors' },
-            // { src: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=600&fit=crop&sat=-50', title: 'باب محل تجاري', alt: 'باب محل', category: 'doors' },
-            // { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=600&fit=crop&sat=-50', title: 'باب داخلي', alt: 'باب داخلي', category: 'doors' },
-            // { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=600&fit=crop&sat=-50', title: 'باب فيلا فاخر', alt: 'باب فيلا', category: 'doors' },
+            // vazcat
+            { src: 'image/vazcat/v1.jpeg', title: 'v1', alt: 'v1', category: 'vazcat' },
+            { src: 'image/vazcat/v2.jpeg', title: 'v2', alt: 'v2', category: 'vazcat' },
+            { src: 'image/vazcat/v3.jpeg', title: 'v3', alt: 'v3', category: 'vazcat' },
+            { src: 'image/vazcat/v4.jpeg', title: 'v4', alt: 'v4', category: 'vazcat' },
+            { src: 'image/vazcat/v5.jpeg', title: 'v5', alt: 'v5', category: 'vazcat' },
+            { src: 'image/vazcat/v6.jpeg', title: 'v6', alt: 'v6', category: 'vazcat' },
+            { src: 'image/vazcat/v7.jpeg', title: 'v7', alt: 'v7', category: 'vazcat' },
+            { src: 'image/vazcat/v8.jpeg', title: 'v8', alt: 'v8', category: 'vazcat' },
+            { src: 'image/vazcat/v9.jpeg', title: 'v9', alt: 'v9', category: 'vazcat' },
+            { src: 'image/vazcat/v10.jpeg', title: 'v10', alt: 'v10', category: 'vazcat' },
 
+            // kitchens
             { src: 'image/C1.jpg', title: 'مطبخ عصري', alt: 'مطبخ عصري', category: 'kitchens' },
             { src: 'image/C2.jpg', title: 'مطبخ فاخر', alt: 'مطبخ فاخر', category: 'kitchens' },
             { src: 'image/C3.jpg', title: 'مطبخ ألمنيوم', alt: 'مطبخ ألمنيوم', category: 'kitchens' },
             { src: 'image/C4.jpg', title: 'مطبخ كبير', alt: 'مطبخ كبير', category: 'kitchens' },
+            { src: 'image/kitchens/co1.jpeg', title: 'co1', alt: 'co1', category: 'kitchens' },
+            { src: 'image/kitchens/co2.jpeg', title: 'co2', alt: 'co2', category: 'kitchens' },
+            { src: 'image/kitchens/co3.jpeg', title: 'co3', alt: 'co3', category: 'kitchens' },
+            { src: 'image/kitchens/co4.jpeg', title: 'co4', alt: 'co4', category: 'kitchens' },
+            { src: 'image/kitchens/co5.jpeg', title: 'co5', alt: 'co5', category: 'kitchens' },
+            { src: 'image/kitchens/co6.jpeg', title: 'co6', alt: 'co6', category: 'kitchens' },
+            { src: 'image/kitchens/co7.jpeg', title: 'co7', alt: 'co7', category: 'kitchens' },
+            { src: 'image/kitchens/co8.jpeg', title: 'co8', alt: 'co8', category: 'kitchens' },
+            { src: 'image/kitchens/co9.jpeg', title: 'co9', alt: 'co9', category: 'kitchens' },
+            { src: 'image/kitchens/co10.jpeg', title: 'co10', alt: 'co10', category: 'kitchens' },
+            { src: 'image/kitchens/co11.jpeg', title: 'co11', alt: 'co11', category: 'kitchens' },
+            { src: 'image/kitchens/co12.jpeg', title: 'co12', alt: 'co12', category: 'kitchens' },
+            { src: 'image/kitchens/co13.jpeg', title: 'co13', alt: 'co13', category: 'kitchens' },
+            { src: 'image/kitchens/co14.jpeg', title: 'co14', alt: 'co14', category: 'kitchens' },
+            { src: 'image/kitchens/co15.jpeg', title: 'co15', alt: 'co15', category: 'kitchens' },
+            { src: 'image/kitchens/co16.jpeg', title: 'co16', alt: 'co16', category: 'kitchens' },
+            { src: 'image/kitchens/co17.jpeg', title: 'co17', alt: 'co17', category: 'kitchens' },
+            { src: 'image/kitchens/co18.jpeg', title: 'co18', alt: 'co18', category: 'kitchens' },
+            { src: 'image/kitchens/co19.jpeg', title: 'co19', alt: 'co19', category: 'kitchens' },
+            { src: 'image/kitchens/co20.jpeg', title: 'co20', alt: 'co20', category: 'kitchens' },
+            { src: 'image/kitchens/co21.jpeg', title: 'co21', alt: 'co21', category: 'kitchens' },
+            { src: 'image/kitchens/co22.jpeg', title: 'co22', alt: 'co22', category: 'kitchens' },
+            { src: 'image/kitchens/co23.jpeg', title: 'co23', alt: 'co23', category: 'kitchens' },
+            { src: 'image/kitchens/co24.jpeg', title: 'co24', alt: 'co24', category: 'kitchens' },
+            { src: 'image/kitchens/co25.jpeg', title: 'co25', alt: 'co25', category: 'kitchens' },
+            { src: 'image/kitchens/co26.jpeg', title: 'co26', alt: 'co26', category: 'kitchens' },
+            { src: 'image/kitchens/co27.jpeg', title: 'co27', alt: 'co27', category: 'kitchens' },
+            { src: 'image/kitchens/co28.jpeg', title: 'co28', alt: 'co28', category: 'kitchens' },
+            { src: 'image/kitchens/co29.jpeg', title: 'co29', alt: 'co29', category: 'kitchens' },
+            { src: 'image/kitchens/co30.jpeg', title: 'co30', alt: 'co30', category: 'kitchens' },
+            { src: 'image/kitchens/co31.jpeg', title: 'co31', alt: 'co31', category: 'kitchens' },
+            { src: 'image/kitchens/co32.jpeg', title: 'co32', alt: 'co32', category: 'kitchens' },
+            { src: 'image/kitchens/co33.jpeg', title: 'co33', alt: 'co33', category: 'kitchens' },
+            { src: 'image/kitchens/co34.png.jpeg', title: 'co34', alt: 'co34', category: 'kitchens' },
+            { src: 'image/kitchens/co35.png.jpeg', title: 'co35', alt: 'co35', category: 'kitchens' },
+            { src: 'image/kitchens/co36.png.jpeg', title: 'co36', alt: 'co36', category: 'kitchens' },
+            { src: 'image/kitchens/co37.png.jpeg', title: 'co37', alt: 'co37', category: 'kitchens' },
+            { src: 'image/kitchens/co38.png.jpeg', title: 'co38', alt: 'co38', category: 'kitchens' },
+            { src: 'image/kitchens/co39.jpeg', title: 'co39', alt: 'co39', category: 'kitchens' },
+            { src: 'image/kitchens/co40.jpeg', title: 'co40', alt: 'co40', category: 'kitchens' },
+            { src: 'image/kitchens/co41.jpeg', title: 'co41', alt: 'co41', category: 'kitchens' },
+            { src: 'image/kitchens/co42.jpeg', title: 'co42', alt: 'co42', category: 'kitchens' },
+            { src: 'image/kitchens/co43.jpeg', title: 'co43', alt: 'co43', category: 'kitchens' },
+            { src: 'image/kitchens/co44.jpeg', title: 'co44', alt: 'co44', category: 'kitchens' },
+            { src: 'image/kitchens/co49.jpeg', title: 'co49', alt: 'co49', category: 'kitchens' },
+            { src: 'image/kitchens/co53.jpeg', title: 'co53', alt: 'co53', category: 'kitchens' },
+            { src: 'image/kitchens/co54.jpeg', title: 'co54', alt: 'co54', category: 'kitchens' },
 
-            // Curtains / Rideaux
+            // doors (pa)
+            { src: 'image/doors/pa1.jpeg', title: 'pa1', alt: 'pa1', category: 'doors' },
+            { src: 'image/doors/pa2.jpeg', title: 'pa2', alt: 'pa2', category: 'doors' },
+            { src: 'image/doors/pa3.jpeg', title: 'pa3', alt: 'pa3', category: 'doors' },
+            { src: 'image/doors/pa4.jpeg', title: 'pa4', alt: 'pa4', category: 'doors' },
+            { src: 'image/doors/pa5.jpeg', title: 'pa5', alt: 'pa5', category: 'doors' },
+            { src: 'image/doors/pa6.jpeg', title: 'pa6', alt: 'pa6', category: 'doors' },
+            { src: 'image/doors/pa7.jpeg', title: 'pa7', alt: 'pa7', category: 'doors' },
+            { src: 'image/doors/pa8.jpeg', title: 'pa8', alt: 'pa8', category: 'doors' },
+            { src: 'image/doors/pa9.jpeg', title: 'pa9', alt: 'pa9', category: 'doors' },
+            { src: 'image/doors/pa10.jpeg', title: 'pa10', alt: 'pa10', category: 'doors' },
+
+            // curtains
             { src: 'image/R1.jpg', title: 'ستائر مودرن', alt: 'ستائر مودرن', category: 'curtains' },
-            { src: 'image/R2.jpg', title: 'ستائر كلاسيكية', alt: 'ستائر كلاسيكية', category: 'curtains' }
+            { src: 'image/R2.jpg', title: 'ستائر كلاسيكية', alt: 'ستائر كلاسيكية', category: 'curtains' },
+            { src: 'image/curtains/r1.jpeg', title: 'r1', alt: 'r1', category: 'curtains' },
+            { src: 'image/curtains/r2.jpeg', title: 'r2', alt: 'r2', category: 'curtains' },
+            { src: 'image/curtains/r3.jpeg', title: 'r3', alt: 'r3', category: 'curtains' },
+            { src: 'image/curtains/r4.jpeg', title: 'r4', alt: 'r4', category: 'curtains' },
+
+            // blacar
+            { src: 'image/blacar/pl1.jpeg', title: 'pl1', alt: 'pl1', category: 'blacar' },
+            { src: 'image/blacar/pl2.jpeg', title: 'pl2', alt: 'pl2', category: 'blacar' },
+            { src: 'image/blacar/pl3.jpeg', title: 'pl3', alt: 'pl3', category: 'blacar' },
+            { src: 'image/blacar/pl4.jpeg', title: 'pl4', alt: 'pl4', category: 'blacar' },
+            { src: 'image/blacar/pl5.jpeg', title: 'pl5', alt: 'pl5', category: 'blacar' },
+            { src: 'image/blacar/pl6.jpeg', title: 'pl6', alt: 'pl6', category: 'blacar' },
+            { src: 'image/blacar/pl7.jpeg', title: 'pl7', alt: 'pl7', category: 'blacar' },
+            { src: 'image/blacar/pl8.jpeg', title: 'pl8', alt: 'pl8', category: 'blacar' },
+            { src: 'image/blacar/pl9.jpeg', title: 'pl9', alt: 'pl9', category: 'blacar' },
+            { src: 'image/blacar/pl10.jpeg', title: 'pl10', alt: 'pl10', category: 'blacar' },
+            { src: 'image/blacar/pl11.jpeg', title: 'pl11', alt: 'pl11', category: 'blacar' },
+            { src: 'image/blacar/pl12.jpeg', title: 'pl12', alt: 'pl12', category: 'blacar' },
+            { src: 'image/blacar/pl13.jpeg', title: 'pl13', alt: 'pl13', category: 'blacar' },
+            { src: 'image/blacar/pl14.jpeg', title: 'pl14', alt: 'pl14', category: 'blacar' },
+            { src: 'image/blacar/pl15.jpeg', title: 'pl15', alt: 'pl15', category: 'blacar' }
         ];
 
         function generateProjects() {
@@ -283,7 +396,8 @@
                 item.setAttribute('onclick', 'openLightbox(this)');
                 item.style.animationDelay = `${(i * 0.05).toFixed(2)}s`;
 
-                const label = p.category === 'windows' ? 'نوافذ' : (p.category === 'doors' ? 'أبواب' : (p.category === 'kitchens' ? 'مطابخ' : 'ستائر'));
+                const labels = { windows: 'نوافذ', doors: 'أبواب', kitchens: 'مطابخ', curtains: 'ستائر', vazcat: 'ڤزكات', zaj: 'زاج', blacar: 'بلاكرات' };
+                const label = labels[p.category] || p.category;
 
                 item.innerHTML = `
                     <div class="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden cursor-pointer">
@@ -308,12 +422,18 @@
             const doorsCount = projectsData.filter(p => p.category === 'doors').length;
             const kitchensCount = projectsData.filter(p => p.category === 'kitchens').length;
             const curtainsCount = projectsData.filter(p => p.category === 'curtains').length;
+            const vazcatCount = projectsData.filter(p => p.category === 'vazcat').length;
+            const zajCount = projectsData.filter(p => p.category === 'zaj').length;
+            const blacarCount = projectsData.filter(p => p.category === 'blacar').length;
 
             const elAll = document.getElementById('allCount'); if (elAll) elAll.textContent = allCount;
             const elWindows = document.getElementById('windowsCount'); if (elWindows) elWindows.textContent = windowsCount;
             const elDoors = document.getElementById('doorsCount'); if (elDoors) elDoors.textContent = doorsCount;
             const elKitchens = document.getElementById('kitchensCount'); if (elKitchens) elKitchens.textContent = kitchensCount;
             const elCurtainsBadge = document.getElementById('curtainsBadge'); if (elCurtainsBadge) elCurtainsBadge.textContent = curtainsCount;
+            const elVazcatBadge = document.getElementById('vazcatBadge'); if (elVazcatBadge) elVazcatBadge.textContent = vazcatCount;
+            const elZajBadge = document.getElementById('zajBadge'); if (elZajBadge) elZajBadge.textContent = zajCount;
+            const elBlacarBadge = document.getElementById('blacarBadge'); if (elBlacarBadge) elBlacarBadge.textContent = blacarCount;
         }
 
         let currentImageIndex = 0;
