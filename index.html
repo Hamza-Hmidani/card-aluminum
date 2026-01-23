@@ -395,8 +395,8 @@
                     
                     <!-- QR Info -->
                     <div class="text-center mb-4">
-                        <p class="text-gray-300 text-sm mb-1">امسح الكود لحفظ البطاقة</p>
-                        <p class="text-yellow-400 text-xs">أو شاركها مع الآخرين</p>
+                        <p class="text-gray-300 text-sm mb-1">امسح الكود لحفظ رقمي</p>
+                        <p class="text-yellow-400 text-xs">أو جهات الاتصال الخاصة بي</p>
                     </div>
                 </div>
             </div>
@@ -486,29 +486,19 @@
     </div>
 
     <script>
-        // Company Information
-        const companyInfo = {
-            name: 'أيوب ألومنيوم',
-            phone: '+212620974552',
-            email: 'info@momani-aluminum.com',
-            website: 'https://nfc-card-aluminum.netlify.app/',
-            address: 'fes، المغرب',
-            whatsapp: '+212620974552'
-        };
-
         // Download VCard
         function downloadVCard() {
             const vcard = `BEGIN:VCARD
             VERSION:3.0
-            FN:${companyInfo.name}
-            ORG:${companyInfo.name}
-            TEL;TYPE=WORK,VOICE:${companyInfo.phone}
-            TEL;TYPE=CELL:${companyInfo.whatsapp}
-            EMAIL:${companyInfo.email}
-            URL:${companyInfo.website}
-            ADR;TYPE=WORK:;;${companyInfo.address}
+            FN: أيوب ألومنيوم
+            ORG: أيوب ألومنيوم
+            TEL;TYPE=WORK,VOICE:+212620974552
+            TEL;TYPE=CELL:+212620974552
+            EMAIL:info@momani-aluminum.com
+            URL:https://nfc-card-aluminum.netlify.app/
+            ADR;TYPE=WORK:;;fes، المغرب
             NOTE:شركة متخصصة في الألومنيوم والزجاج - نوافذ، أبواب، مطابخ
-            END:VCARD`;
+            END:VCARD`.trim();
 
             const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
             const url = URL.createObjectURL(blob);
